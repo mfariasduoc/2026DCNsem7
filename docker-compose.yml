@@ -1,0 +1,15 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: colas_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
